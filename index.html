@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在將您導向至 SimonIoT LINE@...</title>
+    <!-- 引入 Tailwind CSS 以進行快速美化 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 簡單的載入動畫 */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script type="text/javascript">
+        // 頁面載入後立即執行跳轉
+        window.onload = function() {
+            // 使用 location.replace() 的好處是，這個跳轉頁面不會被記錄在瀏覽歷史中
+            // 使用者按下「上一頁」時，會直接回到他們來訪前的頁面，而不是這個空白的跳轉頁
+            window.location.replace("https://line.me/R/ti/p/@066hhxou");
+        };
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen font-sans">
+    <!-- 主容器 -->
+    <div class="text-center p-8 bg-white rounded-lg shadow-md max-w-sm mx-auto">
+        <!-- 載入動畫 -->
+        <div class="loader mx-auto mb-4"></div>
+        
+        <!-- 提示訊息 -->
+        <h1 class="text-2xl font-semibold text-gray-800 mb-2">正在將您導向SimonIoT...</h1>
+        <p class="text-gray-600">
+            即將為您加入 SimonIoT 的官方 LINE@ 帳號。
+        </p>
+        
+        <!-- 備用連結，防止 JavaScript 或瀏覽器問題導致跳轉失敗 -->
+        <div class="mt-6">
+            <p class="text-sm text-gray-500">
+                如果頁面沒有自動跳轉，請點擊下方的按鈕：
+            </p>
+            <a href="https://line.me/R/ti/p/@066hhxou" 
+               class="mt-2 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out">
+                手動加入 SimonIoT
+            </a>
+        </div>
+    </div>
+</body>
+</html>
