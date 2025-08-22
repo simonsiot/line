@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>正在將您導向至 SimonIoT LINE@...</title>
-    <!-- 引入 Tailwind CSS 以進行快速美化 -->
+    <!-- 網站圖示 -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- 引入 Google Fonts 的 Inter 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 簡單的載入動畫 */
+        /* 自訂樣式，使用從 Logo 提取的顏色 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #e0e8f0; /* 從 Logo 背景提取的淺藍灰色 */
+        }
+        .text-main {
+            color: #0d4f8d; /* 從 Logo 深藍色部分提取 */
+        }
+        .bg-accent {
+            background-color: #1e88e5; /* 從 Logo 較亮的藍色部分提取 */
+        }
+        .hover\:bg-accent-dark:hover {
+            background-color: #1565c0; /* 滑鼠懸停時的深藍色 */
+        }
+        /* 更新載入動畫的顏色以匹配新主題 */
         .loader {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #3498db; /* Blue */
+            border: 4px solid #cdd8e2; /* 淺灰色 */
+            border-top: 4px solid #1e88e5; /* 主題藍色 */
             border-radius: 50%;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -26,33 +47,40 @@
         // 頁面載入後立即執行跳轉
         window.onload = function() {
             // 使用 location.replace() 的好處是，這個跳轉頁面不會被記錄在瀏覽歷史中
-            // 使用者按下「上一頁」時，會直接回到他們來訪前的頁面，而不是這個空白的跳轉頁
             window.location.replace("https://line.me/R/ti/p/@066hhxou");
         };
     </script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen font-sans">
+<body class="flex flex-col min-h-screen">
     <!-- 主容器 -->
-    <div class="text-center p-8 bg-white rounded-lg shadow-md max-w-sm mx-auto">
-        <!-- 載入動畫 -->
-        <div class="loader mx-auto mb-4"></div>
-        
-        <!-- 提示訊息 -->
-        <h1 class="text-2xl font-semibold text-gray-800 mb-2">正在將您導向SimonIoT...</h1>
-        <p class="text-gray-600">
-            即將為您加入 SimonIoT 的官方 LINE@ 帳號。
-        </p>
-        
-        <!-- 備用連結，防止 JavaScript 或瀏覽器問題導致跳轉失敗 -->
-        <div class="mt-6">
-            <p class="text-sm text-gray-500">
-                如果頁面沒有自動跳轉，請點擊下方的按鈕：
+    <main class="flex-grow flex items-center justify-center">
+        <div class="text-center p-8 bg-white/70 backdrop-blur-sm rounded-lg shadow-md max-w-sm mx-4">
+            <!-- 載入動畫 -->
+            <div class="loader mx-auto mb-4"></div>
+            
+            <!-- 提示訊息 -->
+            <h1 class="text-2xl font-semibold text-main mb-2">正在將您導向SimonIoT...</h1>
+            <p class="text-slate-700">
+                即將為您加入 SimonIoT 的官方 LINE@ 帳號。
             </p>
-            <a href="https://line.me/R/ti/p/@066hhxou" 
-               class="mt-2 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out">
-                手動加入 SimonIoT
-            </a>
+            
+            <!-- 備用連結 -->
+            <div class="mt-6">
+                <p class="text-sm text-slate-500">
+                    如果頁面沒有自動跳轉，請點擊下方的按鈕：
+                </p>
+                <a href="https://line.me/R/ti/p/@066hhxou" 
+                   class="mt-2 inline-block bg-accent hover:bg-accent-dark text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out">
+                    <i class="fa-brands fa-line mr-2"></i>
+                    手動加入 SimonIoT
+                </a>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="text-center text-slate-600 p-4">
+        <p>&copy; 2025 Simon IoT. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
